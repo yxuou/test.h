@@ -42,6 +42,3 @@ Running the example above should produce the following output:
       tests                 1        0
       assertions            3        0
 
-### Tags
-	build-tool, builder, build-system, vala programing language
-
