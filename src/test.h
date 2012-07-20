@@ -30,10 +30,10 @@
 #ifndef _TEST_H_
 #define _TEST_H_
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <setjmp.h>
 #include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef void (*test_func_t) (void);
 
@@ -120,6 +120,9 @@ _assert (char *file, int line, char *statement, bool value)
 
   printf ("\nAssertion '%s' in file '%s' on line %d failed.\n", statement, file, line );
 
+  /**
+   * If called inside a try-except block jump back to it. Otherwise exit the program. 
+   */
   if (_try_catch_jmp_buf_valid)
     longjmp (_try_catch_jmp_buf, 1);
   else
