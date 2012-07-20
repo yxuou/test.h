@@ -4,8 +4,16 @@ test.h helps you unit testing your C code. It provides simple testing
 functionality in a single header.
 
 ## Overview
-
 Currently test.h supports the following assertions
+```c
+assert(expr)
+assert_true(expr)
+assert_false(expr)
+assert_equal(expr, expected)
+assert_not_equal(expr, expected)
+assert_null(expr)
+assert_not_null(expr)
+```
 
 ## Example
 ```c
@@ -35,15 +43,4 @@ main (void)
 
   return 0;
 }
-```
-
-Running the example above should produce the following output:
-```
-Tests:
- + test_example                3 assertions passed.
-
-Summary:
-  Type                Ran   Failed
-  tests                 1        0
-  assertions            3        0
 ```
